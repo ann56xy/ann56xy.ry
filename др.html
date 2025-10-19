@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днем Рождения! Футбольное поздравление</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e5799 0%, #207cca 51%, #2989d8 100%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            position: relative;
+        }
+        
+        .football-field {
+            background: #2e8b57;
+            width: 100%;
+            height: 200px;
+            border: 5px solid white;
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .field-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid white;
+        }
+        
+        .center-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        
+        .goal-left, .goal-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 80px;
+            border: 2px solid white;
+        }
+        
+        .goal-left {
+            left: 0;
+        }
+        
+        .goal-right {
+            right: 0;
+        }
+        
+        .football {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            animation: moveBall 8s infinite linear;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #FFD700;
+        }
+        
+        .birthday-message {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-section {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        
+        .photo:hover {
+            transform: scale(1.05);
+        }
+        
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0.7;
+            animation: fall linear forwards;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #FFD700;
+            color: #1e5799;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            background: #ffed4e;
+            transform: translateY(-3px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        @keyframes moveBall {
+            0% { left: 10%; transform: translateY(-50%); }
+            25% { left: 30%; transform: translateY(-30%); }
+            50% { left: 60%; transform: translateY(-50%); }
+            75% { left: 80%; transform: translateY(-70%); }
+            100% { left: 10%; transform: translateY(-50%); }
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .photo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>С ДНЕМ РОЖДЕНИЯ!</h1>
+            <p>Лучшая подруга в мире заслуживает самого крутого поздравления!</p>
+            
+            <div class="football-field">
+                <div class="field-lines"></div>
+                <div class="center-circle"></div>
+                <div class="goal-left"></div>
+                <div class="goal-right"></div>
+                <div class="football"></div>
+            </div>
+        </header>
+        
+        <section class="birthday-message">
+            <h2>Дорогая [Имя подруги]!</h2>
+            <p>В этот особенный день я хочу поздравить тебя с днем рождения! Ты - настоящая звезда нашей команды, и без тебя наша жизнь была бы не такой веселой и яркой.</p>
+            <p>Пусть в твоей жизни будет как можно больше побед, радостных моментов и счастливых голов! Желаю тебе забивать голы во всех жизненных матчах и всегда быть в отличной форме!</p>
+            <p>Ты заслуживаешь всего самого лучшего! Любим тебя!</p>
+            
+            <a href="#" class="btn" id="confettiBtn">Запустить конфетти!</a>
+        </section>
+        
+        <section class="video-section">
+            <h2>Наше специальное видео-поздравление</h2>
+            <p>Здесь можно вставить видео с поздравлениями от друзей или забавные моменты</p>
+            
+            <div class="video-container">
+                <!-- ВСТАВЬТЕ ССЫЛКУ НА ВИДЕО В src -->
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <p>Чтобы вставить свое видео, замените ссылку в коде на вашу</p>
+        </section>
+        
+        <section class="gallery-section">
+            <h2>Наши лучшие моменты</h2>
+            <div class="gallery">
+                <!-- Добавьте свои фотографии, заменив src -->
+                <div class="photo">
+                    <img src="https://via.placeholder.com/200" alt="Наши воспоминания">
+                </div>
+                <div class="photo">
+                    <img src="https://via.placeholder.com/200" alt="Наши воспоминания">
+                </div>
+                <div class="photo">
+                    <img src="https://via.placeholder.com/200" alt="Наши воспоминания">
+                </div>
+                <div class="photo">
+                    <img src="https://via.placeholder.com/200" alt="Наши воспоминания">
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Создано с любовью для самой лучшей подруги! © 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        // Функция для создания конфетти
+        function createConfetti() {
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffffff'];
+            const container = document.body;
+            
+            for (let i = 0; i < 150; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                
+                // Случайный цвет
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Случайная позиция
+                confetti.style.left = Math.random() * 100 + 'vw';
+                
+                // Случайный размер
+                const size = Math.random() * 10 + 5;
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                
+                // Случайная длительность анимации
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                
+                container.appendChild(confetti);
+                
+                // Удаление конфетти после анимации
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+        
+        // Обработчик для кнопки конфетти
+        document.getElementById('confettiBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            createConfetti();
+        });
+        
+        // Автоматический запуск конфетти при загрузке страницы
+        window.addEventListener('load', function() {
+            setTimeout(createConfetti, 1000);
+        });
+        
+        // Добавление интерактивности для фотографий
+        document.querySelectorAll('.photo').forEach(photo => {
+            photo.addEventListener('click', function() {
+                this.style.transform = this.style.transform === 'scale(1.2)' ? 'scale(1)' : 'scale(1.2)';
+            });
+        });
+    </script>
+</body>
+</html>
